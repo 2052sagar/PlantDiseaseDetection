@@ -3,8 +3,8 @@ import numpy as np         # dealing with arrays
 import os                  # dealing with directories
 from random import shuffle # mixing up or currently ordered data that might lead our network astray in training.
 from tqdm import tqdm      # a nice pretty percentage bar for tasks. Thanks to viewer Daniel BA1/4hler for this suggestion
-TRAIN_DIR = 'C:/Users/sagpa/Desktop/plant_project/train/train'
-TEST_DIR = 'C:/Users/sagpa/Desktop/plant_project/test/test'
+TRAIN_DIR = 'train/train'
+TEST_DIR = 'test/test'
 IMG_SIZE = 50
 LR = 1e-3
 MODEL_NAME = 'healthyvsunhealthy-{}-{}.model'.format(LR, '2conv-basic')
@@ -98,8 +98,6 @@ model.fit({'input': X}, {'targets': Y}, n_epoch=8, validation_set=({'input': tes
 
 model.save(MODEL_NAME)
 
-
-input(' ')
 
 
 
