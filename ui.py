@@ -99,7 +99,7 @@ def analysis():
     from random import shuffle  # mixing up or currently ordered data that might lead our network astray in training.
     from tqdm import \
         tqdm  # a nice pretty percentage bar for tasks. Thanks to viewer Daniel BA1/4hler for this suggestion
-    verify_dir = 'C:/Users/sagpa/Desktop/plant_project/testpicture'
+    verify_dir = 'testpicture'
     IMG_SIZE = 50
     LR = 1e-3
     MODEL_NAME = 'healthyvsunhealthy-{}-{}.model'.format(LR, '2conv-basic')
@@ -221,10 +221,11 @@ def analysis():
             button.grid(column=0, row=9, padx=20, pady=20)
 
 def openphoto():
-    dirPath = "C:/Users/sagpa/Desktop/plant_project/testpicture"
+    dirPath = "testpicture"
     fileList = os.listdir(dirPath)
     for fileName in fileList:
         os.remove(dirPath + "/" + fileName)
+    # C:/Users/sagpa/Downloads/images is the location of the image which you want to test..... you can change it according to the image location you have  
     fileName = askopenfilename(initialdir='C:/Users/sagpa/Downloads/images', title='Select image for analysis ',
                            filetypes=[('image files', '.jpg')])
     dst = "C:/Users/sagpa/Desktop/plant_project/testpicture"
